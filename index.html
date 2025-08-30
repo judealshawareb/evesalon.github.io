@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eve Salon</title>
+    <link rel="icon" type="image.jpg" href="img/currentLogo.JPG">
+    <link rel="stylesheet" href="css/Stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Eve Salon</h1>
+            <a href="index.html">
+                <img src="img/currentLogo.JPG" alt="logo">
+            </a>
+        </div>
+        <nav> 
+            <a href="moreAr.html">المزيد </a>
+            <a href="servicesAr.html">الخدمات</a>  
+            <a href="photosAr.html">تصفح الصور</a>
+        
+        </nav>
+    </header>
+
+<main>
+    
+        <!-- First Carousel -->
+        <div class="carousel-container">
+            <button class="carousel-button prev" onclick="moveSlide(0, -1)">&#10094;</button>
+
+            <div class="carousel-slides" id="carousel1">
+                <img class="slide" src="img/pic1.JPEG" alt="Salon Photo 1">
+                <img class="slide" src="img/photo2.jpg" alt="Salon Photo 2">
+                <img class="slide" src="img/photo3.jpg" alt="Salon Photo 3">
+                <img class="slide" src="img/pic4.jpg" alt="Salon Photo 4">
+            </div>
+
+            <button class="carousel-button next" onclick="moveSlide(0, 1)">&#10095;</button>
+        </div>
+
+        <!-- About Paragraphs -->
+        <section>
+            <p>
+                تأسس صالون إيف عام ٢٠٠٣ في قلب مدينة الكرك بالأردن،
+                 وهو وجهة موثوقة للسيدات الباحثات عن الأناقة والجودة والعناية التجميلية الاحترافية.
+                  أسسته منال الشوارب، خبيرة التجميل المرخصة بخبرة تزيد عن ٢٠ عامًا في تصفيف الشعر والمكياج،
+                    وسرعان ما اشتهر بأجوائه الدافئة واهتمامه بالتفاصيل والتزامه الراسخ برضا العميلات
+            </p>
+        </section>
+
+        <section>
+            <p>
+                في صالون إيف، نؤمن بأن الجمال الحقيقي يبدأ بالثقة بالنفس.
+                ولذلك، نركز على تقديم خدمات عالية الجودة باستخدام منتجات عالية الجودة وتقنيات حديثة،
+                 مصممة خصيصًا لتلبية احتياجات كل عميلة على حدة.
+            </p>
+        </section>
+
+        <!-- Second Carousel -->
+<div class="carousel-container">
+    <button class="carousel-button prev" onclick="moveSlide(1, -1)">&#10094;</button>
+    <div class="carousel-wrapper">
+        <div class="carousel-slides" id="carousel2">
+            <img class="slide2" src="img/pic5.jpg" alt="Salon Photo 5">
+            <img class="slide2" src="img/pic6.jpg" alt="Salon Photo 6">
+            <img class="slide2" src="img/pic7.jpg" alt="Salon Photo 7">
+            <img class="slide2" src="img/pic8.jpg" alt="Salon Photo 8">
+        </div>
+    </div>
+    <button class="carousel-button next" onclick="moveSlide(1, 1)">&#10095;</button>
+</div>
+
+        <section>
+            <p>
+                سواءً كنتِ تبحثين عن لمسة منعشة، أو إطلالة عروس ساحرة، أو ببساطة لحظة استرخاء للعناية بنفسكِ، فإن صالون إيف هو وجهتكِ المثالية لتشعري بالجمال والثقة
+
+                <br><br>
+                <strong>صالون إيف - لأنكِ تستحقين الأفضل</strong>
+            </p>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <p style="color:rgb(250, 227, 198);">&copy; 2003 Eve Salon. All Rights Reserved.</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+    const currentIndices = [0, 0];
+const slideGroups = [
+    document.querySelectorAll('#carousel1 .slide'),
+    document.querySelectorAll('#carousel2 .slide2')
+];
+
+function showSlide(carouselIndex) {
+    const slides = slideGroups[carouselIndex];
+    const offset = -currentIndices[carouselIndex] * 100;
+    slides.forEach(slide => {
+        slide.style.transform = `translateX(${offset}%)`;
+    });
+}
+
+function moveSlide(carouselIndex, direction) {
+    const slides = slideGroups[carouselIndex];
+    currentIndices[carouselIndex] += direction;
+
+    if (currentIndices[carouselIndex] < 0) {
+        currentIndices[carouselIndex] = slides.length - 1;
+    } else if (currentIndices[carouselIndex] >= slides.length) {
+        currentIndices[carouselIndex] = 0;
+    }
+
+    showSlide(carouselIndex);
+}
+
+// Initialize carousels
+showSlide(0);
+showSlide(1);
+
+</script>
+</body>
+</html>
+

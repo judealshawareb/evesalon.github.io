@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eve Salon</title>
+    <link rel="icon" type="image.jpg" href="img/currentLogo.JPG">
+    <link rel="stylesheet" href="css/Stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        main {
+            min-height: 80vh;
+            padding: 3vh 2vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            font-family: 'Cairo', sans-serif;
+            color: #533b4d;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 15px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(250, 227, 198, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 15px;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        footer {
+            margin-top: 3vh;
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
+
+            .gallery {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Eve Salon</h1>
+            <a href="index.html">
+                <img src="img/currentLogo.JPG" alt="logo">
+            </a>
+        </div>
+        <nav> 
+            <a href="index.html">الصفحة الرئيسية</a>
+            <a href="moreAr.html">المزيد </a>
+            <a href="servicesAr.html">الخدمات</a>  
+            
+        
+        </nav>
+    </header>
+
+
+    <main>
+        <h2>معرض الصور</h2>
+        <div class="gallery">
+            <div class="gallery-item"><img src="img/pic1.JPEG" alt="Salon Photo 1"></div>
+            <div class="gallery-item"><img src="img/photo2.jpg" alt="Salon Photo 2"></div>
+            <div class="gallery-item"><img src="img/photo3.jpg" alt="Salon Photo 3"></div>
+            <div class="gallery-item"><img src="img/pic4.jpg" alt="Salon Photo 4"></div>
+            <div class="gallery-item"><img src="img/pic5.jpg" alt="Salon Photo 5"></div>
+            <div class="gallery-item"><img src="img/pic6.jpg" alt="Salon Photo 6"></div>
+            <div class="gallery-item"><img src="img/pic7.jpg" alt="Salon Photo 7"></div>
+            <div class="gallery-item"><img src="img/pic8.jpg" alt="Salon Photo 8"></div>
+            <div class="gallery-item"><img src="img/pic9.jpg" alt="Salon Photo 9"></div>
+            <div class="gallery-item"><img src="img/pic10.jpg" alt="Salon Photo 10"></div>
+            <div class="gallery-item"><img src="img/pic11.jpg" alt="Salon Photo 11"></div>
+            <div class="gallery-item"><img src="img/pic 12.jpg" alt="Salon Photo 12"></div>
+            <div class="gallery-item"><img src="img/pic13.jpg" alt="Salon Photo 13"></div>
+            <div class="gallery-item"><img src="img/pic14.jpg" alt="Salon Photo 14"></div>
+            <div class="gallery-item"><img src="img/pic15.jpg" alt="Salon Photo 15"></div>
+            <div class="gallery-item"><img src="img/pic16.jpg" alt="Salon Photo 16"></div>
+            <div class="gallery-item"><img src="img/pic17.jpg" alt="Salon Photo 17"></div>
+            <div class="gallery-item"><img src="img/pic18.jpg" alt="Salon Photo 18"></div>
+            <div class="gallery-item"><img src="img/pic19.jpg" alt="Salon Photo 19"></div>
+            <div class="gallery-item"><img src="img/pic20.jpg" alt="Salon Photo 20"></div>
+
+        </div>
+    </main>
+
+
+
+    <footer>
+        <p style="color:rgb(250, 227, 198);">&copy; 2003 Eve Salon. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
